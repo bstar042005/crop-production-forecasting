@@ -22,4 +22,4 @@
 - XGBoost outperformed Random Forest.
 - Dataset: [Kaggle - Crop Yield Prediction](https://www.kaggle.com/datasets/patelris/crop-yield-prediction-dataset)
 
-![alt text](image-.png)
+![alt text](image1-.png)
