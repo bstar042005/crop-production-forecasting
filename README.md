@@ -1,25 +1,28 @@
-## Crop Production Forecasting 🌾
+# Crop Yield Forecasting using Machine Learning
 
-**Goal:** Predict crop yield based on climate, soil, and weather data.
+## Overview
+This project predicts crop yield using climate and pesticide data.
+Multiple regression models were trained and evaluated, with XGBoost
+providing the best performance.
 
-### Steps
-1. Data Preprocessing
-2. Model Training (Random Forest, XGBoost)
-3. Evaluation & Visualization
+## Models Used
+- Linear Regression
+- Random Forest Regressor
+- XGBoost Regressor
 
-### Tools
-- Python, Jupyter
-- Pandas, Scikit-learn, XGBoost, Matplotlib, Seaborn
+## Evaluation Metrics
+- Mean Squared Error (MSE)
+- Mean Absolute Error (MAE)
+- R² Score
 
-## Results
-| Model          | R² Score | MAE  |
-|----------------|----------|------|
-| Random Forest  | 0.87     | 12.4 |
-| XGBoost        | 0.91     | 10.1 |
+## Key Results
+XGBoost achieved the lowest error and highest R² score,
+demonstrating superior performance for crop yield prediction.
 
-### Key Insights
-- Temperature and rainfall have the strongest influence on yield.
-- XGBoost outperformed Random Forest.
-- Dataset: [Kaggle - Crop Yield Prediction](https://www.kaggle.com/datasets/patelris/crop-yield-prediction-dataset)
+## Tech Stack
+Python, Pandas, NumPy, Scikit-learn, XGBoost, Matplotlib, Seaborn
 
-C:\Users\bhavy\OneDrive\Desktop\crop-production-forecasting\image.png
+## Business Impact
+Accurate crop yield prediction helps farmers and policymakers
+optimize irrigation, pesticide usage, and resource planning.
+
