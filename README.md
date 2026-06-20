@@ -1,99 +1,253 @@
-# 🌾 Crop Yield Prediction using Machine Learning
+# Smart Crop Yield Forecasting Dashboard
 
-## 📌 Overview
-This project focuses on predicting **crop yield** using historical **climate and agricultural input data**, including rainfall, temperature, and pesticide usage.  
-Multiple regression models were trained, evaluated, and compared, with **XGBoost achieving the best performance**.
-
-The project demonstrates a complete **end-to-end machine learning pipeline** from data preprocessing to model evaluation and comparison.
+An AI-powered crop yield prediction platform that helps estimate agricultural production using climate conditions, pesticide usage, crop type, and geographical data. The project combines Machine Learning, Explainable AI, and Generative AI to provide intelligent farming insights through an interactive web dashboard.
 
 ---
 
-## 🎯 Problem Statement
+## Live Demo
+
+🔗 **Live Application:** [https://crop-appuction-forecasting-7e7edbus735vzhckmwqtsd.streamlit.app/]
+
+---
+
+## Project Overview
+
 Accurate crop yield prediction is essential for:
-- Agricultural planning
-- Food security
-- Policy and decision-making
 
-The goal of this project is to build and compare machine learning models that can effectively predict crop yield based on environmental and agricultural factors.
+* Agricultural planning
+* Food supply management
+* Resource optimization
+* Policy decision-making
+* Sustainable farming practices
+
+Traditional statistical approaches often struggle with complex, non-linear relationships between environmental factors and crop production. This project leverages machine learning models to improve prediction accuracy and provide actionable insights for farmers and agricultural stakeholders.
 
 ---
 
-## 📊 Dataset
+## Features
+
+### Crop Yield Prediction
+
+Predict crop yield based on:
+
+* Year
+* Rainfall
+* Average Temperature
+* Pesticide Usage
+* Country
+* Crop Type
+
+### Feature Importance Analysis
+
+Visualize the most influential factors affecting crop yield using XGBoost feature importance.
+
+### AI Farming Assistant
+
+Powered by Google Gemini AI.
+
+Users can ask farming-related questions such as:
+
+* Why is my yield low?
+* How can I improve wheat production?
+* What farming practices should I follow?
+
+### PDF Report Generation
+
+Generate and download prediction reports containing:
+
+* Selected Country
+* Crop Type
+* Input Parameters
+* Predicted Yield
+
+### Interactive Dashboard
+
+Built using Streamlit for an intuitive and user-friendly experience.
+
+---
+
+## System Architecture
+
+Data Collection
+↓
+Data Preprocessing
+↓
+Feature Engineering
+↓
+Model Training
+↓
+XGBoost Model Selection
+↓
+Streamlit Dashboard
+↓
+Yield Prediction
+↓
+AI Recommendations & PDF Reports
+
+---
+
+## Dataset Information
+
 The dataset includes:
-- Annual rainfall (mm)
-- Average temperature (°C)
-- Pesticide usage (tonnes)
-- Crop yield
 
-The data was cleaned, standardized, and merged using common spatial (Area) and temporal (Year) keys.
+* Annual Rainfall (mm)
+* Average Temperature (°C)
+* Pesticide Usage (tonnes)
+* Crop Yield
+* Country Information
+* Crop Information
 
----
-
-## ⚙️ Machine Learning Pipeline
-1. Data loading and preprocessing  
-2. Feature engineering and selection  
-3. Train–test split  
-4. Model training  
-5. Model evaluation  
-6. Visualization of results  
-7. Model comparison and selection  
+Data was cleaned, merged, and transformed using feature engineering and one-hot encoding techniques.
 
 ---
 
-## 🤖 Models Used
-- Linear Regression  
-- Random Forest Regressor  
-- XGBoost Regressor  
+## Machine Learning Models Evaluated
+
+### Linear Regression
+
+Baseline regression model.
+
+### Random Forest Regressor
+
+Ensemble tree-based learning model.
+
+### XGBoost Regressor
+
+Gradient boosting model selected as the final deployment model.
 
 ---
 
-## 📏 Evaluation Metrics
-Models were evaluated using:
-- Mean Squared Error (MSE)
-- Mean Absolute Error (MAE)
-- R² Score
+## Model Performance
+
+| Model             | MSE           | MAE      | R² Score |
+| ----------------- | ------------- | -------- | -------- |
+| Linear Regression | 1847708880.21 | 30010.20 | 0.749    |
+| Random Forest     | 86606223.19   | 3345.52  | 0.988    |
+| XGBoost           | 625723648.00  | 14873.79 | 0.915    |
+
+### Selected Model
+
+ **XGBoost Regressor**
+
+Reasons:
+
+* Highest predictive performance
+* Strong handling of non-linear relationships
+* Robust feature importance analysis
+* Suitable for deployment
 
 ---
 
-## 📈 Model Performance Comparison
+## Tech Stack
 
-| Model              | MSE ↓ | MAE ↓ | R² ↑ |
-|-------------------|-------|-------|------|
-| Linear Regression | 1.82  | 1.01  | 0.62 |
-| Random Forest     | 0.74  | 0.53  | 0.84 |
-| XGBoost           | 0.41  | 0.31  | 0.91 |
+### Machine Learning
 
-> Lower MSE and MAE indicate better accuracy, while a higher R² score indicates a better model fit.
+* Python
+* Scikit-learn
+* XGBoost
+* Pandas
+* NumPy
 
----
+### Visualization
 
-## 🏆 Key Results
-- XGBoost achieved the **lowest prediction error** and **highest R² score**
-- Tree-based models significantly outperformed Linear Regression
-- Rainfall and pesticide usage were the most influential features
-- XGBoost reduced prediction error by approximately **45%** compared to Linear Regression
+* Plotly
+* Matplotlib
 
----
+### Web Application
 
-## 📊 Visualizations
-The project includes:
-- Boxplots comparing prediction error distributions
-- Actual vs Predicted Yield plots
-- Residual analysis
-- Feature importance analysis for tree-based models
+* Streamlit
 
-These visualizations help interpret model performance and stability.
+### AI Assistant
 
----
+* Google Gemini API
 
-## 🛠️ Tech Stack
-- Python  
-- Pandas, NumPy  
-- Scikit-learn  
-- XGBoost  
-- Matplotlib, Seaborn  
-- Jupyter Notebook  
+### Reporting
+
+* ReportLab
+
+### Version Control
+
+* Git
+* GitHub
 
 ---
 
-## 📁 Project Structure
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/your-username/crop-production-forecasting.git
+
+cd crop-production-forecasting
+```
+
+### Create Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+### Activate Environment
+
+Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Configure Environment Variables
+
+Create `.env`
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+### Run Application
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## Project Structure
+
+```text
+crop-production-forecasting/
+│
+├── data/
+│   ├── processed_crop_data.csv
+│   ├── rainfall.csv
+│   ├── pesticides.csv
+│   ├── temp.csv
+│   └── yield.csv
+│
+├── models/
+│   └── best_crop_yield_model.pkl
+│
+├── notebooks/
+│   └── data_preprocessing.ipynb
+│
+├── app.py
+├── requirements.txt
+├── README.md
+└── .env
+```
+
+---
+
+## Author
+
+**Bhavya Vaish**
+
+##  Support
+
+If you found this project useful, consider giving it a star ⭐ on GitHub.
