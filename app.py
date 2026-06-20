@@ -19,11 +19,13 @@ from reportlab.lib.styles import getSampleStyleSheet
 # GEMINI CONFIG
 # =====================================
 
-load_dotenv()
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+except:
+    load_dotenv()
+    api_key = os.getenv("GEMINI_API_KEY")
 
-genai.configure(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
+genai.configure(api_key=api_key)
 
 gemini = genai.GenerativeModel(
     "gemini-2.5-flash"
