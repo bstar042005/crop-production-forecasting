@@ -1,42 +1,42 @@
-# 🌾 Crop Production Forecasting using Machine Learning
+# 🌾 Crop Yield Prediction using Machine Learning
 
 ## 📌 Overview
-This project predicts **crop yield** using historical **climate (temperature, rainfall)** and **pesticide usage** data. Multiple regression models were trained, evaluated, and compared to identify the best-performing approach for yield prediction.
+This project focuses on predicting **crop yield** using historical **climate and agricultural input data**, including rainfall, temperature, and pesticide usage.  
+Multiple regression models were trained, evaluated, and compared, with **XGBoost achieving the best performance**.
 
-The project follows an **end-to-end machine learning pipeline**, including data preprocessing, feature engineering, model training, evaluation, visualization, and model persistence.
+The project demonstrates a complete **end-to-end machine learning pipeline** from data preprocessing to model evaluation and comparison.
 
 ---
 
-## 🧠 Problem Statement
-Accurate crop yield prediction is critical for:
+## 🎯 Problem Statement
+Accurate crop yield prediction is essential for:
 - Agricultural planning
-- Food supply management
-- Policy decision-making
+- Food security
+- Policy and decision-making
 
-Traditional statistical methods struggle with complex, non-linear relationships between climate variables and yield. This project applies **machine learning models** to improve prediction accuracy.
+The goal of this project is to build and compare machine learning models that can effectively predict crop yield based on environmental and agricultural factors.
 
 ---
 
-## 📊 Dataset Description
-The dataset consists of:
-- **Average Temperature (°C)**
-- **Annual Rainfall (mm)**
-- **Pesticide Usage (tonnes)**
-- **Crop Yield**
+## 📊 Dataset
+The dataset includes:
+- Annual rainfall (mm)
+- Average temperature (°C)
+- Pesticide usage (tonnes)
+- Crop yield
 
-Data was cleaned, merged, and aligned by **country and year** before modeling.
+The data was cleaned, standardized, and merged using common spatial (Area) and temporal (Year) keys.
 
 ---
 
 ## ⚙️ Machine Learning Pipeline
-1. Data loading and validation  
-2. Data preprocessing & cleaning  
-3. Feature selection  
-4. Train–test split  
-5. Model training  
-6. Model evaluation  
-7. Visualization of results  
-8. Model saving for reuse  
+1. Data loading and preprocessing  
+2. Feature engineering and selection  
+3. Train–test split  
+4. Model training  
+5. Model evaluation  
+6. Visualization of results  
+7. Model comparison and selection  
 
 ---
 
@@ -57,34 +57,43 @@ Models were evaluated using:
 
 ## 📈 Model Performance Comparison
 
-| Model | MSE ↓ | MAE ↓ | R² ↑ |
-|------|------|------|------|
-| Linear Regression | 1.82 | 1.01 | 0.62 |
-| Random Forest | 0.74 | 0.53 | 0.84 |
-| XGBoost | 0.41 | 0.31 | 0.91 |
+| Model              | MSE ↓ | MAE ↓ | R² ↑ |
+|-------------------|-------|-------|------|
+| Linear Regression | 1.82  | 1.01  | 0.62 |
+| Random Forest     | 0.74  | 0.53  | 0.84 |
+| XGBoost           | 0.41  | 0.31  | 0.91 |
 
-> Lower MSE & MAE indicate better accuracy  
-> Higher R² indicates better model fit
+> Lower MSE and MAE indicate better accuracy, while a higher R² score indicates a better model fit.
 
 ---
 
 ## 🏆 Key Results
-- **XGBoost achieved the best performance**, with the lowest prediction error and highest R² score.
-- Tree-based models significantly outperformed linear regression.
-- XGBoost reduced prediction error by **~45% compared to Linear Regression**.
-- Climate and pesticide features showed strong influence on crop yield.
+- XGBoost achieved the **lowest prediction error** and **highest R² score**
+- Tree-based models significantly outperformed Linear Regression
+- Rainfall and pesticide usage were the most influential features
+- XGBoost reduced prediction error by approximately **45%** compared to Linear Regression
 
 ---
 
-## 📊 Visual Analysis
-- Boxplots were used to compare error distributions across models.
-- XGBoost showed lower variance and fewer outliers.
-- Visualizations help interpret model behavior beyond numeric metrics.
+## 📊 Visualizations
+The project includes:
+- Boxplots comparing prediction error distributions
+- Actual vs Predicted Yield plots
+- Residual analysis
+- Feature importance analysis for tree-based models
+
+These visualizations help interpret model performance and stability.
 
 ---
 
-## 💾 Model Persistence
-The best-performing model (XGBoost) was saved using `joblib` for future inference and deployment.
+## 🛠️ Tech Stack
+- Python  
+- Pandas, NumPy  
+- Scikit-learn  
+- XGBoost  
+- Matplotlib, Seaborn  
+- Jupyter Notebook  
 
-```text
-models/crop_yield_model.pkl
+---
+
+## 📁 Project Structure
